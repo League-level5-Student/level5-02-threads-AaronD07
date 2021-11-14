@@ -15,13 +15,20 @@ package _05_Synchronized_Swimming;
  */
 public class SynchronizedSwimming {
 	private static final Object swimmingPool = new Object();
-
+	
 	public static void main(String[] args) {
 		Swimmer a = new Swimmer("John");
 		Swimmer b = new Swimmer("Sally");
 		a.start();
 		b.start();
+		for(int i=0; i<5; i++) {
+			takeTurn(a);
+			takeTurn(b);
+			}
+	
 	}
+	
+	
 
 	/*
 	 * Refactor this method using a synchronized block to ensure a lock must be held on
