@@ -1,6 +1,6 @@
 package _06_Wait_and_Notify.Practice;
 
-import _05_Synchronized_Swimming.Swimmer;
+
 
 /*
  
@@ -8,7 +8,6 @@ Below are two threads. One thread increments the counter
 and the other thread prints the result. If you run the
 program as it is, you'll notice that the output in not
 sequential.
-
 Your goal is to modify the code inside the threads so that 
 they are in synch. Use synchronized, wait, and notify to make
 it so that t1 will only increase counter after t2 has printed 
@@ -18,45 +17,45 @@ printed in order.
 */
 
 public class SynchedSplitLoops {
-	static Object threadLock = new Object();
 	static int counter = 0;
-	
+
 	public static void main(String[] args) {
-		
 		Thread t1 = new Thread(() -> {
 			for(int i = 0; i < 100000; i++) {
 				counter++;
-			}
-			
-		});
-		
-		
-		Thread t2 = new Thread(() -> {
-			for(int i = 0; i < 100000; i++) {
-				System.out.println(counter);
-				takeTurn();
 				
 			}
-			
 		});
 		
-		t1.start();
-		t2.start();
+			Thread t2 = new Thread(() -> {
+				for(int i = 0; i < 100000; i++) {
+					System.out.println(counter);
+				}
+			});
+t1.start();
+t2.start();
+
+try {
+	t1.join();
+	t2.join();
+} catch (InterruptedException e) {
+	System.err.println("Could not join threads");
+}
+
+}
+	
+
 		
+	private static void go(Thread thread) throws InterruptedException {
+		System.out.println(thread);
+		Thread.sleep(2000);
+		System.out.println(thread);
+	}
+	public static void takeTurn(Thread thread) {
 		try {
-			t1.join();
-			t2.join();
-		} catch (InterruptedException e) {
-			System.err.println("Could not join threads");
-		}
-		public static void takeTurn(Thread thread) {
-		synchronized(threadLock) { 
-			threadLock.notify();
-			try {
-				threadLock.wait();
-			} catch (InterruptedException e) {
-				System.out.println("error!");
-			}
+			go(thread);
+			Thread.sleep(100);
+		} catch (InterruptedException ignore) {
 		}
 	}
 }

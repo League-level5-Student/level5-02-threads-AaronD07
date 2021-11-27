@@ -12,7 +12,7 @@ public class SplitLoopTester implements Runnable{
 	@Override
 	public void run() {
 		synchronized(threadLock) { 
-			System.out.println("Thread " + thread + " Line 1");
+			System.out.println("200");
 			threadLock.notify();
 			try {
 				threadLock.wait();
