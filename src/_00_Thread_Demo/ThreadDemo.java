@@ -1,10 +1,22 @@
 package _00_Thread_Demo;
 
 
+import java.util.Stack;
+
 import org.jointheleague.graphical.robot.Robot;
 
 public class ThreadDemo {
 	public static void main(String[] args) {
+		Stack<Integer> nums = new Stack<Integer>();
+		 int e = 20;
+nums.add(e);
+
+System.out.println(2|3);
+System.out.println(3&7);
+System.out.println(6|5);
+System.out.println(9&9);
+System.out.println(13^10);
+
 			Robot timmy = new Robot(400, 700);
 			Robot tammy = new Robot(800, 700);
 			Robot sammy = new Robot(1200, 700);
@@ -24,7 +36,6 @@ public class ThreadDemo {
 			Thread r1 = new Thread(()->timmy.move(400));
 			Thread r2 = new Thread(()->tammy.move(400));
 			Thread r3 = new Thread(()->sammy.move(400));
-			
 			r1.start();
 			r2.start();
 			r3.start();

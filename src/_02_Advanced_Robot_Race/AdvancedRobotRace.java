@@ -1,16 +1,22 @@
 	package _02_Advanced_Robot_Race;
 	
 
-	import java.util.ArrayList;
+	import java.io.IOException;
+import java.net.ServerSocket;
+import java.util.ArrayList;
 	import java.util.Random;
+import java.util.Stack;
+import java.util.stream.Stream;
 
-	import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 
 	import org.jointheleague.graphical.robot.Robot;
 
 	public class AdvancedRobotRace {
 		// 1. make a main method
 		public static void main(String[] args) {
+
+			
 			
 			Random random = new Random();
 				
@@ -85,6 +91,11 @@
 			
 			
 			}
+
+		private static void organize(Object object, String string) {
+			// TODO Auto-generated method stub
+			
+		}
 		
 			
 			}
