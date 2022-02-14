@@ -1,6 +1,12 @@
 package _02_Advanced_Robot_Race;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.net.ServerSocket;
 import java.util.stream.Stream;
+
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 public class test {
 //	Stack<Integer> nums = new Stack<Integer>();
@@ -40,20 +46,51 @@ public class test {
 //		// TODO Auto-generated catch block
 //		e.printStackTrace();
 //	}
-	void organize(Module->{
-		
-	}, null);
-
-	interface Module {
-		void modulate(int amt, float val);
+//	void organize(Module->{
+//		
+//	}, null);
+//
+//	interface Module {
+//		void modulate(int amt, float val);
+//	} 
+//
+//	public void organize(Module m){
+//		//code
+//	}
+//	Stream<Double> dubStream = //initialized here;
+//
+//	void forEach(dubStream){
+//		
+////	}
+////}
+//	public static void main(String[] args) {
+//		System.out.println(15^7);
+//		try {
+//			ServerSocket ss = new ServerSocket(200);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+//
+//Stream<String> namesStream = new Stream<String>();
+//namesStream.forEach(System.out.println("hello"));
+//	
+//	
+//	
+	interface Performer {
+		void perform(int speed);
 	} 
 
-	public void organize(Module m){
+	public void dance(Performer p){
 		//code
 	}
-	Stream<Double> dubStream = //initialized here;
-
-	void forEach(dubStream){
+	public static void main(String[] args) {
 		
+	
+void dance(Performer p->{
+	p = new Performer;
+	p.perform(10);
+	});
 	}
-}
+//}
